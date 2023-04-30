@@ -9,16 +9,16 @@ load_dotenv()
 db = SQLAlchemy()
 
 
-def configure(app):
+def configure_db(app):
     url = URL.create(
         os.getenv('DRIVERNAME'),
-        username=os.getenv('USERNAME'),
-        password=os.getenv('PASSWORD'),
+        username=os.getenv('USERNAME_DB'),
+        password=os.getenv('PASSWORD_DB'),
         host=os.getenv('HOST'),
         database=os.getenv('DATABASE'),
         port=os.getenv('PORT'),
     )
-
     app.config['SQLALCHEMY_DATABASE_URI'] = url
+
     app.db = db
     db.init_app(app)
