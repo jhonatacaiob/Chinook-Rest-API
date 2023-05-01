@@ -6,7 +6,7 @@ Este projeto usa o framework `Flask` do `python` que se comunica com um banco de
 ## Rodando 
 Antes de qualquer coisa certifique-se de que seu ambiente tem os [requisitos necessários](#requisitos). Para executar a aplicação basta rodar o comando a seguir:
 ```bash
-Flask --app music_app run
+flask --app music_app run
 ```
 
 
@@ -19,8 +19,13 @@ Antes de rodar o projeto, primeiramente faça o seguinte:
     ```
 3. Crie o seu banco de dados postgres e faça o restore do dump presente no arquivo `db.out` que está na raiz do projeto.
 4. Crie e configure um arquivo .env com as seguintes informações:
-    ```
-
+    ```env
+         DRIVERNAME= //Nome do sgbd escolhido + nome do driver
+         USERNAME_DB= // Nome de usuario do banco
+         PASSWORD_DB= // Senha do banco
+         HOST= // Servidor no qual o banco está hospedado
+         PORT= // Porta que o banco está roando
+         DATABASE= // Nome do banco de dados 
     ```
 ## Autores
 - [Jhonata Caio](https://github.com/jhonatacaiob)
