@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from music_app.api import music
 from music_app.database import configure_db
+from music_app.api import artistas
 
 
 def create_app(test_config=None):
@@ -25,5 +26,6 @@ def create_app(test_config=None):
         pass
 
     app.register_blueprint(music.bp)
+    app.register_blueprint(artistas.bp)
 
     return app
