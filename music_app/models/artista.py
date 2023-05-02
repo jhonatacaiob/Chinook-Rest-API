@@ -12,4 +12,3 @@ class Artista(db.Model):
         primary_key=True,
     )
     nome: db.Mapped[str] = db.mapped_column()
-    albuns: db.Mapped[list['Album']] = db.relationship(back_populates='artista')
