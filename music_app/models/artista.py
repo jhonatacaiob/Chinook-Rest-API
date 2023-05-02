@@ -1,9 +1,8 @@
 from dataclasses import dataclass
 
 from flask import current_app
-from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+from ..database import db
 
 
 @dataclass
@@ -13,3 +12,4 @@ class Artista(db.Model):
         primary_key=True,
     )
     nome: db.Mapped[str] = db.mapped_column()
+    albuns: db.Mapped[list['Album']] = db.relationship(back_populates='artista')

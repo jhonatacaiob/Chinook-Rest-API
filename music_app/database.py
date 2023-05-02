@@ -1,15 +1,15 @@
 import os
 
+from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.engine import URL
-from dotenv import load_dotenv
 
 
-load_dotenv()
 db = SQLAlchemy()
 
 
 def configure_db(app):
+    load_dotenv()
     url = URL.create(
         os.getenv('DRIVERNAME'),
         username=os.getenv('USERNAME_DB'),
