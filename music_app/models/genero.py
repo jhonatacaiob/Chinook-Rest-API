@@ -1,13 +1,10 @@
 from dataclasses import dataclass
 
-from flask import current_app
-
 from ..database import db
 
 
 @dataclass
-class Artista(db.Model):
-
+class Genero(db.Model):
     id: db.Mapped[int] = db.mapped_column(
         primary_key=True,
     )
